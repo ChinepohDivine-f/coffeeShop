@@ -6,6 +6,6 @@ class Notifications extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Center(child: Text("Notification Page", style: TextStyle(fontFamily: 'Poppins')),);
+    return Center(child: Text("You Dont't Have Any Notification", style: TextStyle(fontFamily: 'Poppins')),);
   }
 }

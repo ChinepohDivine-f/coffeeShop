@@ -6,7 +6,7 @@ class Favourite extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Center(
-      child: Text("Favourites Page", style: TextStyle(fontFamily: 'Poppins')),
+      child: Text("Your Favourites", style: TextStyle(fontFamily: 'Poppins')),
     );
   }
 }

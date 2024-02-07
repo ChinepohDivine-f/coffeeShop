@@ -24,67 +24,32 @@ class _ConfirmPageState extends State<ConfirmPage> {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               // CustomAppBar1()
-              Stack(
-                children: [
-                  ClipRRect(
-                      borderRadius: BorderRadius.circular(30),
-                      child: Image.asset("assets/images/Latte.jpg")),
-                  const Positioned(
-                      left: 0,
-                      right: 0,
-                      child: Padding(
-                        padding: EdgeInsets.all(20.0),
-                        child: CustomAppBar1(),
-                      )),
-                  Positioned(
-                      top: 205,
-                      left: 0,
-                      right: 0,
-                      bottom: 0,
-                      child: Container(
-                        // key: UniqueKey(),
-                        height: 90,
-                        decoration: BoxDecoration(
-                            color: darkColor2,
-                            borderRadius: BorderRadius.circular(30)),
-                        child: Padding(
-                          padding: const EdgeInsets.only(
-                              top: 20, left: 20, right: 20, bottom: 0),
-                          child: Row(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            children: [
-                              Column(
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                children: [
-                                  const Text(
-                                    "Cappucinno",
-                                    style: TextStyle(
-                                        fontFamily: 'Poppins',
-                                        fontSize: 18,
-                                        color: Colors.white,
-                                        fontWeight: FontWeight.w500),
-                                  ),
-                                  Text(
-                                    "With oat milk",
-                                    style: TextStyle(
-                                        fontFamily: 'Poppins',
-                                        fontSize: 12.61,
-                                        color: inactiveColor),
-                                  )
-                                ],
-                              ),
-                              const Column(
-                                children: [],
-                              ),
-                            ],
-                          ),
-                        ),
-                      ))
-                ],
+              Container(
+                decoration: BoxDecoration(
+                    color: darkColor,
+                    borderRadius: BorderRadius.all(Radius.circular(20))),
+                child: Column(
+                  children: [
+                    Stack(
+                      children: [
+                        ClipRRect(
+                            borderRadius: BorderRadius.circular(30),
+                            child: Image.asset("assets/images/Latte.jpg")),
+                        const Positioned(
+                            left: 0,
+                            right: 0,
+                            child: Padding(
+                              padding: EdgeInsets.all(20.0),
+                              child: CustomAppBar1(),
+                            )),
+                      ],
+                    ),
+                    CoffeeSummary()
+                  ],
+                ),
               ),
               const SizedBox(
-                height: 20,
+                height: 30,
               ),
               // DESCRPTION
               Text(
@@ -102,7 +67,7 @@ class _ConfirmPageState extends State<ConfirmPage> {
                     style: const TextStyle(
                       fontFamily: 'Poppins',
                       fontSize: 12.61,
-                      // color:
+                      color: Colors.white
                     ),
                     children: [
                       TextSpan(
@@ -111,11 +76,11 @@ class _ConfirmPageState extends State<ConfirmPage> {
                               fontFamily: 'Poppins',
                               fontSize: 12.61,
                               color: secondaryColor,
-                              fontWeight: FontWeight.bold))
+                               fontWeight: FontWeight.bold))
                     ]),
               ),
               const SizedBox(
-                height: 20,
+                height: 25,
               ),
               // Size
               Text(
@@ -141,7 +106,7 @@ class _ConfirmPageState extends State<ConfirmPage> {
                 ),
               ),
               const SizedBox(
-                height: 20,
+                height: 25,
               ),
               // price
               SizedBox(
@@ -150,9 +115,41 @@ class _ConfirmPageState extends State<ConfirmPage> {
                     Expanded(
                       flex: 2,
                       child: Container(
-                          height: 50,
-                          width: double.infinity,
-                          color: inactiveColor),
+                        height: 45,
+                        width: double.infinity,
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Text(
+                              
+                              "Price",
+                              textAlign: TextAlign.center,
+                              style: TextStyle(
+                                  fontFamily: 'Poppins',
+                                  fontSize: 12,
+                                  color: inactiveColor),
+                            ),
+                            RichText(
+                                text: TextSpan(
+                                    text: '\$ ',
+                                    style: TextStyle(
+                                        fontFamily: 'sF-Fourche',
+                                        fontSize: 16,
+                                        color: primaryColor),
+                                    children: const [
+                                      
+                                  TextSpan(
+                                      text: '4.20 ',
+                                      style: TextStyle(
+                                          fontFamily: 'Poppins',
+                                          fontSize: 14,
+                                          color: Colors.white
+                                          ))
+                                ]))
+                          ],
+                        ),
+                      ),
                     ),
                     Expanded(
                       flex: 3,
@@ -187,6 +184,54 @@ class _ConfirmPageState extends State<ConfirmPage> {
             ],
           )),
     )));
+  }
+}
+
+class CoffeeSummary extends StatelessWidget {
+  const CoffeeSummary({
+    super.key,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      // key: UniqueKey(),
+      height: 90,
+      decoration: BoxDecoration(
+          color: darkColor2, borderRadius: BorderRadius.circular(30)),
+      child: Padding(
+        padding: const EdgeInsets.only(top: 20, left: 20, right: 20, bottom: 0),
+        child: Row(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                const Text(
+                  "Cappucinno",
+                  style: TextStyle(
+                      fontFamily: 'Poppins',
+                      fontSize: 18,
+                      color: Colors.white,
+                      fontWeight: FontWeight.w500),
+                ),
+                Text(
+                  "With oat milk",
+                  style: TextStyle(
+                      fontFamily: 'Poppins',
+                      fontSize: 12.61,
+                      color: inactiveColor),
+                )
+              ],
+            ),
+            const Column(
+              children: [],
+            ),
+          ],
+        ),
+      ),
+    );
   }
 }
 
