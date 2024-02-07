@@ -155,7 +155,7 @@ class CustomRecommendationBox extends StatelessWidget {
       padding: const EdgeInsets.only(bottom: 10.0),
       child: Container(
         // width: 90,
-        height: 150,
+        height: 130,
 
         decoration: BoxDecoration(
             backgroundBlendMode: BlendMode.darken,
@@ -165,7 +165,7 @@ class CustomRecommendationBox extends StatelessWidget {
                 begin: Alignment.bottomCenter,
                 end: Alignment.topCenter,
                 colors: [
-                  secondaryColor,
+                  tertiarycolor,
                   darkColor,
                 ])),
         child: Container(
@@ -182,7 +182,7 @@ class CustomRecommendationBox extends StatelessWidget {
                 SizedBox(
                   width: 25,
                 ),
-                SizedBox(
+                Expanded(
                     child: IntrinsicWidth(
                         child: Text("Five Coffee Beans You Must try!",
                             style: TextStyle(
@@ -213,7 +213,7 @@ class CustomTextField extends StatelessWidget {
         enabledBorder: OutlineInputBorder(
             gapPadding: 5,
             borderRadius: BorderRadius.circular(5),
-            borderSide: BorderSide(strokeAlign: 13, color: secondaryColor)),
+            borderSide: BorderSide(strokeAlign: 13, color: tertiarycolor)),
         focusedBorder: OutlineInputBorder(
             borderRadius: BorderRadius.circular(10),
             borderSide: BorderSide(strokeAlign: 13, color: primaryColor)),
