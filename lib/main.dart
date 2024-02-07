@@ -15,12 +15,18 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       home:  MyHomePage(),
       themeMode: ThemeMode.system,
-      theme: ThemeData(brightness: Brightness.dark, 
+      theme: ThemeData(
+      // brightness: Brightness.dark, 
       useMaterial3: true, 
       visualDensity: VisualDensity.comfortable,
       primarySwatch: Colors.orange,
       primaryColor: primaryColor,
       secondaryHeaderColor: Colors.brown,
+      colorScheme: ColorScheme.dark(
+        onBackground: darkColor2,
+        primary: tertiarycolor,
+        onPrimary: inactiveColor
+      )
       )
       
     );
