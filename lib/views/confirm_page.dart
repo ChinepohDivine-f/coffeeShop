@@ -76,7 +76,7 @@ class _ConfirmPageState extends State<ConfirmPage> {
                               fontFamily: 'Poppins',
                               fontSize: 12.61,
                               color: secondaryColor,
-                               fontWeight: FontWeight.bold))
+                                fontWeight: FontWeight.bold))
                     ]),
               ),
               const SizedBox(
@@ -314,7 +314,9 @@ class CustomAppBar1 extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
         IconButton.filled(
-          // highlightColor: darkColor2,
+          highlightColor: darkColor,
+          color: primaryColor,
+          splashColor: darkColor2,
           onPressed: () {
             Navigator.pushReplacement(
                 context, MaterialPageRoute(builder: (context) => MyHomePage()));
@@ -322,6 +324,9 @@ class CustomAppBar1 extends StatelessWidget {
           icon: const Icon(Icons.arrow_back_ios_new),
         ),
         IconButton.filled(
+          highlightColor: darkColor,
+          color: primaryColor,
+          splashColor: darkColor2,
             onPressed: () {
               // to be continued...
             },

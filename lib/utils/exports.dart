@@ -1,0 +1,10 @@
+export "package:coffeshop/widgets/coffee_cart.dart";
+export "package:coffeshop/widgets/custom_recommendation_box.dart";
+export "package:coffeshop/widgets/custom_text.dart";
+export "package:coffeshop/widgets/custom_text_field.dart";
+export "package:coffeshop/views/confirm_page.dart";
+export "package:coffeshop/views/notification.dart";
+export "package:coffeshop/views/favourites.dart";
+export "package:coffeshop/views/home.dart";
+export "package:coffeshop/views/page_holder.dart";
+export "package:coffeshop/utils/colors.dart";
