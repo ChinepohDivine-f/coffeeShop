@@ -8,3 +8,5 @@ export "package:coffeshop/views/favourites.dart";
 export "package:coffeshop/views/home.dart";
 export "package:coffeshop/views/page_holder.dart";
 export "package:coffeshop/utils/colors.dart";
+export "package:coffeshop/views/auth/auth.dart";
+export "package:coffeshop/views/auth/login_screen.dart";

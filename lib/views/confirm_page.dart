@@ -1,9 +1,12 @@
 import 'dart:ui';
 
+import 'package:blurrycontainer/blurrycontainer.dart';
 import 'package:coffeshop/utils/colors.dart';
 import 'package:coffeshop/views/home.dart';
 import 'package:coffeshop/views/page_holder.dart';
 import 'package:flutter/material.dart';
+import 'package:glass/glass.dart';
+import 'package:animated_icon/animated_icon.dart';
 
 class ConfirmPage extends StatefulWidget {
   const ConfirmPage({super.key});
@@ -26,7 +29,7 @@ class _ConfirmPageState extends State<ConfirmPage> {
               // CustomAppBar1()
               Container(
                 decoration: BoxDecoration(
-                    color: darkColor,
+                    color: tertiarycolor,
                     borderRadius: BorderRadius.all(Radius.circular(20))),
                 child: Column(
                   children: [
@@ -47,7 +50,7 @@ class _ConfirmPageState extends State<ConfirmPage> {
                     CoffeeSummary()
                   ],
                 ),
-              ),
+              ).asGlass(blurX: 50, blurY: 20,clipBorderRadius: BorderRadius.circular(30)),
               const SizedBox(
                 height: 30,
               ),
@@ -197,8 +200,9 @@ class CoffeeSummary extends StatelessWidget {
     return Container(
       // key: UniqueKey(),
       height: 90,
-      decoration: BoxDecoration(
-          color: darkColor2, borderRadius: BorderRadius.circular(30)),
+      // decoration: BoxDecoration(
+      //     color: darkColor2,
+      //      borderRadius: BorderRadius.circular(30)),
       child: Padding(
         padding: const EdgeInsets.only(top: 20, left: 20, right: 20, bottom: 0),
         child: Row(
@@ -232,6 +236,7 @@ class CoffeeSummary extends StatelessWidget {
         ),
       ),
     );
+    // .asGlass(clipBorderRadius: BorderRadius.circular(30));
   }
 }
 
@@ -310,13 +315,14 @@ class CustomAppBar1 extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
         IconButton.filled(
-          highlightColor: darkColor,
-          color: primaryColor,
-          splashColor: darkColor2,
+          highlightColor: darkColor2,
+          color: Colors.white,
+          splashColor: inactiveColor,
           onPressed: () {
             Navigator.pushReplacement(
                 context, MaterialPageRoute(builder: (context) => MyHomePage()));
@@ -324,15 +330,21 @@ class CustomAppBar1 extends StatelessWidget {
           icon: const Icon(Icons.arrow_back_ios_new),
         ),
         IconButton.filled(
-          highlightColor: darkColor,
-          color: primaryColor,
-          splashColor: darkColor2,
+         highlightColor: darkColor2,
+          color: Colors.white,
+          splashColor: inactiveColor,
             onPressed: () {
               // to be continued...
             },
             icon: const Icon(
               Icons.favorite,
             )),
+          // AnimateIcon(
+          //   toolTip: 'add to favourites',
+          //   color: Colors.white,
+          //   height: 40, 
+          //   width: 40,
+          //   onTap: (){}, iconType:IconType.animatedOnTap, animateIcon:AnimateIcons.heart2)
       ],
     );
   }

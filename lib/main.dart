@@ -1,3 +1,4 @@
+import 'package:coffeshop/splash.dart';
 import 'package:coffeshop/utils/colors.dart';
 import 'package:coffeshop/views/page_holder.dart';
 import 'package:flutter/material.dart';
@@ -13,7 +14,8 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return  MaterialApp(
       debugShowCheckedModeBanner: false,
-      home:  MyHomePage(),
+      // home:  MyHomePage(),
+      home: Splash(),
       themeMode: ThemeMode.system,
       theme: ThemeData(
       // brightness: Brightness.dark, 

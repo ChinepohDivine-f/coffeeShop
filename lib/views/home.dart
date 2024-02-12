@@ -8,9 +8,16 @@ import 'package:coffeshop/widgets/custom_text.dart';
 import 'package:coffeshop/widgets/custom_text_field.dart';
 import 'package:flutter/material.dart';
 
-class Home extends StatelessWidget {
+// final List<Coffee> [['latte', false]]
+
+class Home extends StatefulWidget {
   const Home({super.key});
 
+  @override
+  State<Home> createState() => _HomeState();
+}
+
+class _HomeState extends State<Home> {
   @override
   Widget build(BuildContext context) {
     return SingleChildScrollView(
@@ -44,7 +51,7 @@ class Home extends StatelessWidget {
             const SizedBox(
               height: 30,
             ),
-            CustomTextField(),
+            const CustomTextField(text: 'Find your favourite cofee...', icon: Icons.search_rounded, obsecure: false,),
 
             // horizontal list view
             const SizedBox(
@@ -59,28 +66,32 @@ class Home extends StatelessWidget {
                 children: const [
                   CustomText(
                     text: 'Cappuccino',
-                    isSelected: true,
+                    // isSelected: true, ontap: () { 
+                    //   setState(() {
+                        
+                    //   });
+                    //  },
                   ),
-                  CustomText(
-                    text: 'Expresso',
-                    isSelected: false,
-                  ),
-                  CustomText(
-                    text: 'Latte',
-                    isSelected: false,
-                  ),
-                  CustomText(
-                    text: 'Black',
-                    isSelected: false,
-                  ),
-                  CustomText(
-                    text: 'Hott',
-                    isSelected: false,
-                  ),
-                  CustomText(
-                    text: 'Creamy',
-                    isSelected: false,
-                  ),
+                  // CustomText(
+                  //   text: 'Expresso',
+                  //   isSelected: false,
+                  // ),
+                  // CustomText(
+                  //   text: 'Latte',
+                  //   isSelected: false,
+                  // ),
+                  // CustomText(
+                  //   text: 'Black',
+                  //   isSelected: false,
+                  // ),
+                  // CustomText(
+                  //   text: 'Hott',
+                  //   isSelected: false,
+                  // ),
+                  // CustomText(
+                  //   text: 'Creamy',
+                  //   isSelected: false,
+                  // ),
                 ],
               ),
             ),
@@ -93,20 +104,17 @@ class Home extends StatelessWidget {
             SizedBox(
               // height: 300,
               height: 280,
-              child: Expanded(
-                // height: 210,
-                child: ListView(
-                  shrinkWrap: true,
-                  scrollDirection: Axis.horizontal,
-                  children: const [
-                    CoffeeCart(),
-                    CoffeeCart(),
-                    CoffeeCart(),
-                    CoffeeCart(),
-                    CoffeeCart(),
-                    CoffeeCart(),
-                  ],
-                ),
+              child: ListView(
+                shrinkWrap: true,
+                scrollDirection: Axis.horizontal,
+                children: const [
+                  CoffeeCart(),
+                  CoffeeCart(),
+                  CoffeeCart(),
+                  CoffeeCart(),
+                  CoffeeCart(),
+                  CoffeeCart(),
+                ],
               ),
             ),
             // special for you
@@ -131,18 +139,13 @@ class Home extends StatelessWidget {
             const SizedBox(
               height: 10,
             ),
-            SizedBox(
-              child: Flexible(
-                fit: FlexFit.tight,
-                child: ListView(
-                  shrinkWrap: true,
-                  physics: NeverScrollableScrollPhysics(),
-                  children: [
-                    CustomRecommendationBox(),
-                    CustomRecommendationBox(),
-                  ],
-                ),
-              ),
+            ListView(
+              shrinkWrap: true,
+              physics: NeverScrollableScrollPhysics(),
+              children: [
+                CustomRecommendationBox(),
+                CustomRecommendationBox(),
+              ],
             ),
           ],
         ),

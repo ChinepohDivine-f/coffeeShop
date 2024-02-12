@@ -2,6 +2,8 @@ import 'dart:ui';
 import 'package:coffeshop/utils/colors.dart';
 import 'package:coffeshop/views/confirm_page.dart';
 import 'package:flutter/material.dart';
+import 'package:glass/glass.dart';
+import 'package:blurrycontainer/blurrycontainer.dart';
 
 class CoffeeCart extends StatelessWidget {
   const CoffeeCart({
@@ -25,13 +27,14 @@ class CoffeeCart extends StatelessWidget {
               gradient: LinearGradient(
                   begin: Alignment.topLeft,
                   end: Alignment.bottomRight,
-                  colors: [secondaryColor, tertiarycolor, darkColor])),
-          child: Container(
+                  colors: [inactiveColor, tertiarycolor, darkColor])),
+          child: BlurryContainer(
             padding: EdgeInsets.all(12.31),
-            decoration: BoxDecoration(
-                backgroundBlendMode: BlendMode.overlay,
-                borderRadius: BorderRadius.circular(30),
-                color: darkColor2),
+            // color: darkColor2,
+            // decoration: BoxDecoration(
+            //     backgroundBlendMode: BlendMode.overlay,
+            //     borderRadius: BorderRadius.circular(30),
+            //     color: darkColor2),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
@@ -80,8 +83,10 @@ class CoffeeCart extends StatelessWidget {
                                       )
                                     ],
                                   ),
-                                ),
-                              ))
+                                ).asGlass(clipBorderRadius: const BorderRadius.only(
+                                          bottomLeft: Radius.elliptical(120, 100),
+                                          topRight: Radius.circular(90))),),
+                              )
                         ],
                       ),
                       const SizedBox(
@@ -139,7 +144,9 @@ class CoffeeCart extends StatelessWidget {
               ],
             ),
           ),
-        ),
+        ).asGlass(
+          blurX: 20, blurY: 30,
+          clipBorderRadius: BorderRadius.circular(30)),
       ),
     );
   }
